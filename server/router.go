@@ -36,6 +36,15 @@ func NewRouter() *gin.Engine {
 			auth.GET("user/me", api.UserMe)
 			auth.DELETE("user/logout", api.UserLogout)
 		}
+
+		// video interfaces
+		v1.POST("videos", api.CreateVideo)
+		v1.GET("videos", api.ListVideo)
+
+		v1.GET("video/:id", api.ShowVideo)
+		v1.PUT("video/:id", api.UpdateVideo)
+		v1.DELETE("video/:id", api.DeleteVideo)
+
 	}
 	return r
 }
