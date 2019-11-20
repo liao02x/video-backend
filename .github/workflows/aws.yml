@@ -80,3 +80,8 @@ jobs:
 #         service: sample-app-service
 #         cluster: default
 #         wait-for-service-stability: true
+    - name: curl to jenkins webhook
+      id: curl
+      uses: wei/curl@v1
+      with:
+        args: -X GET http://52.52.25.21:50001/generic-webhook-trigger/invoke?token=video-backend
